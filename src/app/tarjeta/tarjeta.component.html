@@ -1,12 +1,13 @@
 <mat-card class="example-card">
-  <mat-card-header>
-    <div [style.background-image]= "url('https://i.ytimg.com/vi/mSNoDlQonSU/hqdefault.jpg')" mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{persona.nombre }}</mat-card-title>
+  <mat-card-header>    
+    <div mat-card-avatar class="example-header-image" style.background-image="url({{persona.imagenUrl}})"></div>
+    <mat-card-title>{{persona.name}}</mat-card-title>
+    <mat-card-subtitle>{{persona.subTitle}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://i.ytimg.com/vi/mSNoDlQonSU/hqdefault.jpg" alt="Joiman Gomez">
+  <img mat-card-image src={{persona.imagenUrl}} alt="Luis Llerena">
   <mat-card-content>
     <p> 
-        {{persona.texto }}
+        {{persona.description}}
     </p>
   </mat-card-content>
   <mat-card-actions>
@@ -19,3 +20,5 @@
 <br>DISLIKES {{ dislikes }}
 <br><br>TOTAL VOTES {{ totalVotes }}
 </div>
+
+

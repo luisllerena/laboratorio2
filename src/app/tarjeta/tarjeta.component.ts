@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Persona {
-  nombre: string;
-  texto: string;
-}
+import { Person } from '../model';
 
 @Component({
   selector: 'app-tarjeta',
@@ -11,10 +7,19 @@ interface Persona {
   styleUrls: ['./tarjeta.component.css']
 })
 export class TarjetaComponent {
-  persona: Persona = {
-    nombre: 'Joiman Gomez',
-    texto: 'Super Cool'
+  
+  persona: Person = {
+    name: 'Luis Llerena',
+    description: 'Ingeniero Desarrollador FullStack',
+    subTitle: 'Desarrollador',
+    thumbnail: '',
+    imagenUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+    title: '',
+    likes: 0,
+    dislikes: 0,
+    totalVotes: 0
   };
+
   public likes = 0;
   public dislikes = 0;
   public totalVotes = 0 ;
@@ -22,14 +27,10 @@ export class TarjetaComponent {
   public onLike (): void {
     this.totalVotes += 1;
     this.likes += 1;
-    if (this.dislikes > 0) { 
-      this.dislikes -= 1; 
-    }
   }
   
   public onDislike(): void {
     this.totalVotes += 1;
      this.dislikes += 1;
-     if (this.likes > 0) { this.likes -= 1; }
-     }
+  }
 }
