@@ -5,11 +5,11 @@
           <mat-card-title>{{person.name}}</mat-card-title>
           <mat-card-subtitle>{{person.subTitle}}</mat-card-subtitle>
         </mat-card-header>
-        <img  
-              mat-card-image 
+        <img  mat-card-image 
               src={{person.imagenUrl}} 
               alt="imagen"
-              (click)="goDetails(person.id)">
+              (click)="goDetails(person.id)"
+              style="width: 90%; padding-left: 40px">
         <mat-card-content>
           <p> 
               {{person.description}}
@@ -19,13 +19,14 @@
           <button mat-button (click)='onLike (person.id)'>LIKE</button>
           <button mat-button (click)='onDislike (person.id)'>DISLIKE</button>
         </mat-card-actions>
+        <div [style.background]= "yellow">    
+          <br>LIKES {{person.likes}}
+          <br>DISLIKES {{person.dislikes}}
+          <br>TOTAL VOTES {{person.totalVotes}}
+        </div>    
       </mat-card>
       <!-- <app-results></app-results> -->
-      <div [style.background]= "yellow">    
-        <br>LIKES {{person.likes}}
-        <br>DISLIKES {{person.dislikes}}
-        <br>TOTAL VOTES {{person.totalVotes}}
-      </div>    
+    
       <!-- <a [routerLink]="['/second', person.id]">
         <span class="badge">Ver Detalles</span>
       </a>     -->
