@@ -15,10 +15,11 @@
     <button mat-button (click)='onDislike ()'>DISLIKE</button>
   </mat-card-actions>
 </mat-card>
-<div [style.background]= "yellow">
+
+<div [style.background]= "yellow">    
   <br>LIKES {{ likes }}
-<br>DISLIKES {{ dislikes }}
-<br><br>TOTAL VOTES {{ totalVotes }}
+  <br>DISLIKES {{ dislikes }}
+  <br>TOTAL VOTES {{ totalVotes }}
 </div>
 
 

@@ -7,8 +7,8 @@ import { Person } from '../model';
   styleUrls: ['./tarjeta.component.css']
 })
 export class TarjetaComponent {
-  
-  persona: Person = {
+
+  persona: Person =  {
     name: 'Luis Llerena',
     description: 'Ingeniero Desarrollador FullStack',
     subTitle: 'Desarrollador',
@@ -28,9 +28,9 @@ export class TarjetaComponent {
     this.totalVotes += 1;
     this.likes += 1;
   }
-  
+
   public onDislike(): void {
     this.totalVotes += 1;
-     this.dislikes += 1;
+    this.dislikes += 1;
   }
 }

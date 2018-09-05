@@ -5,11 +5,13 @@ import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
