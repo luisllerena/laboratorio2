@@ -7,15 +7,17 @@ import { EventEmitter } from 'events';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-@Input() Title: string;
-@Output() onClick = new EventEmitter<string>();
+// @Input() Title: string;
+ // tslint:disable-next-line:no-output-on-prefix
+ @Output() onClick = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  public buttonWasClicked(){
-    this.onClick.emit("se presiono el boton");
+  public buttonWasClicked(e) {
+    this.onClick.emit('se presiono el boton');
+    console.log(e);
   }
 }

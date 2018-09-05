@@ -1,25 +1,41 @@
-<mat-card class="example-card">
-  <mat-card-header>    
-    <div mat-card-avatar class="example-header-image" style.background-image="url({{persona.imagenUrl}})"></div>
-    <mat-card-title>{{persona.name}}</mat-card-title>
-    <mat-card-subtitle>{{persona.subTitle}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src={{persona.imagenUrl}} alt="Luis Llerena">
-  <mat-card-content>
-    <p> 
-        {{persona.description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button (click)='onLike ()'>LIKE</button>
-    <button mat-button (click)='onDislike ()'>DISLIKE</button>
-  </mat-card-actions>
-</mat-card>
-
-<div [style.background]= "yellow">    
-  <br>LIKES {{ likes }}
-  <br>DISLIKES {{ dislikes }}
-  <br>TOTAL VOTES {{ totalVotes }}
+<div *ngFor= "let person of personas">
+    <mat-card class="example-card" appHighlight>
+        <mat-card-header>    
+          <div mat-card-avatar class="example-header-image" style.background-image="url({{person.imagenUrl}})"></div>
+          <mat-card-title>{{person.name}}</mat-card-title>
+          <mat-card-subtitle>{{person.subTitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img  
+              mat-card-image 
+              src={{person.imagenUrl}} 
+              alt="imagen"
+              (click)="goDetails(person.id)">
+        <mat-card-content>
+          <p> 
+              {{person.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)='onLike (person.id)'>LIKE</button>
+          <button mat-button (click)='onDislike (person.id)'>DISLIKE</button>
+        </mat-card-actions>
+      </mat-card>
+      <!-- <app-results></app-results> -->
+      <div [style.background]= "yellow">    
+        <br>LIKES {{person.likes}}
+        <br>DISLIKES {{person.dislikes}}
+        <br>TOTAL VOTES {{person.totalVotes}}
+      </div>    
+      <!-- <a [routerLink]="['/second', person.id]">
+        <span class="badge">Ver Detalles</span>
+      </a>     -->
+      <!-- <p appHighlight>Texto</p>         -->
 </div>
+
+
+
+
+
+
 
 
